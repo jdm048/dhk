@@ -54,8 +54,8 @@ namespace RIAT_LABS
 
         public interface ISerialize
         {
-            string Serialize(Output output);
-            Input Deserialize(string someSerialize);
+            string Serialize<T>(T output);
+            T Deserialize<T>(string someSerialize);
         }
 
         public class XMLSerialize : ISerialize

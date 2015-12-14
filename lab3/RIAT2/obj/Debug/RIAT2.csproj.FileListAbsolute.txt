@@ -1,0 +1,6 @@
+D:\Лабы\lab3\RIAT2\bin\Debug\RIAT2.exe.config
+D:\Лабы\lab3\RIAT2\bin\Debug\RIAT2.exe
+D:\Лабы\lab3\RIAT2\bin\Debug\RIAT2.pdb
+D:\Лабы\lab3\RIAT2\obj\Debug\RIAT2.csprojResolveAssemblyReference.cache
+D:\Лабы\lab3\RIAT2\obj\Debug\RIAT2.exe
+D:\Лабы\lab3\RIAT2\obj\Debug\RIAT2.pdb

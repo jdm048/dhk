@@ -1,1 +1,7 @@
 C:\Users\Дима\Downloads\lab1\RIAT_LABS\bin\Debug\RIAT_LABS.exe.config
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\bin\Debug\RIAT_LABS.exe.config
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\obj\Debug\RIAT_LABS.csprojResolveAssemblyReference.cache
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\bin\Debug\RIAT_LABS.exe
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\bin\Debug\RIAT_LABS.pdb
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\obj\Debug\RIAT_LABS.exe
+C:\Users\Дима\Documents\GitHub\dhk\RIAT_LABS\obj\Debug\RIAT_LABS.pdb

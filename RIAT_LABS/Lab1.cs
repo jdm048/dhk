@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Text.RegularExpressions;
 
 namespace RIAT_LABS
 {
@@ -54,15 +55,15 @@ namespace RIAT_LABS
 
         public interface ISerialize
         {
-            string Serialize(Output output);
-            Input Deserialize(string someSerialize);
+            string Serialize <T>(T output);
+            T Deserialize<T>(string someSerialize);
         }
 
         public class XMLSerialize : ISerialize
         {
-            public Input Deserialize(string someSerialize)
+            public T Deserialize<T>(string someSerialize)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Input));
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
                 MemoryStream str = new MemoryStream();
                 StreamWriter stw = new StreamWriter(str);
                 str.Position = 0;
@@ -70,13 +71,13 @@ namespace RIAT_LABS
                 stw.Flush();
                 str.Position = 0;
                 XmlReader reader = XmlReader.Create(str);
-                Input res = (Input)serializer.Deserialize(reader);
+                T res = (T)serializer.Deserialize(reader);
                 return res;
             }
 
-            public string Serialize(Output output)
+            public string Serialize<T>(T output)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Output));
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
                 MemoryStream stream = new MemoryStream();
                 XmlWriterSettings xmlsettings = new XmlWriterSettings();
                 xmlsettings.OmitXmlDeclaration = true;
@@ -99,16 +100,16 @@ namespace RIAT_LABS
         public class JSONSerialize : ISerialize
         {
 
-            public Input Deserialize(string someSerialize)
+            public T Deserialize<T>(string someSerialize)
             {
 
                 MemoryStream stream = new MemoryStream();
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Input));
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
                 StreamWriter sw = new StreamWriter(stream);
                 sw.Write(someSerialize);
                 sw.Flush();
                 stream.Position = 0;
-                return (Input)serializer.ReadObject(stream);
+                return (T)serializer.ReadObject(stream);
             }
 
             public string Serialize(Output output)
@@ -127,6 +128,11 @@ namespace RIAT_LABS
                     sr.Dispose();
                 }
                 return res;
+            }
+
+            public string Serialize<T>(T output)
+            {
+                throw new NotImplementedException();
             }
         }
         

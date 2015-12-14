@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +22,14 @@ namespace RIAT_LABS
                 if (serializeType=="Json")
                 {
                     Lab1.JSONSerialize json = new Lab1.JSONSerialize();
-                    li = json.Deserialize(someText);
+                    li = json.Deserialize <Lab1.Input>(someText);
                     output = Lab1.InputToOutput.MakeOutputFromInput(li);
                     Console.WriteLine(json.Serialize(output));
                 }
                 else
                 {
                     Lab1.XMLSerialize xml = new Lab1.XMLSerialize();
-                    li = xml.Deserialize(someText);
+                    li = xml.Deserialize<Lab1.Input>(someText);
                     output = Lab1.InputToOutput.MakeOutputFromInput(li);
                     Console.WriteLine(xml.Serialize(output));
                 }
